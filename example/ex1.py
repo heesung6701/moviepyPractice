@@ -1,10 +1,10 @@
-#
+"""
 # Practice for Moviepy
 # Example 1. Text with moving letters
 # References https://zulko.github.io/moviepy/examples/moving_letters.html
-# Dependencies: 1. python-scipy (pip install scipy)
-#
-import os
+# Dependencies
+# 1. python-scipy (pip install scipy)
+"""
 import numpy as np
 
 from moviepy.editor import *
@@ -65,10 +65,10 @@ def main():
         for funcpos in [vortex, cascade, arrive, vortexout]]
 
     final_clip = concatenate_videoclips(clips)
-    output_path = '../output/'
+    output_path = '../output'
     if not os.path.exists(output_path):
         os.makedirs(output_path)
-    final_clip.write_videofile('../output/ex1_coolTextEffects.mp4', fps=25, codec='mpeg4')
+    final_clip.write_videofile('{}/ex1_coolTextEffects.mp4'.format(output_path), fps=25, codec='mpeg4')
 
 
 if __name__ == '__main__':
