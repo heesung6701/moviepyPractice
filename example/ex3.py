@@ -1,7 +1,16 @@
+"""
+# Practice for Moviepy
+# Example 3. a Simple music video
+# References: https://zulko.github.io/moviepy/examples/ukulele_concerto.html
+# Dependencies
+# some video files
+"""
+
 from moviepy.editor import *
 
 
 def main():
+    # ukulele = VideoFileClip("../input/moi_ukulele.MOV", audio=False). \
     ukulele = VideoFileClip("../input/frontier.mp4.webm", audio=False). \
         subclip(60 + 33, 60 + 50). \
         crop(486, 180, 1196, 570)
@@ -10,6 +19,7 @@ def main():
 
     piano = (
         VideoFileClip(
+            # "../../videos/douceamb.mp4", audio=False
             "../input/knights.mp4", audio=False
         )
         .subclip(30, 50)
